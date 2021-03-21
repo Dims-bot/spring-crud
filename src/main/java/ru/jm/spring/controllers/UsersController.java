@@ -70,8 +70,9 @@ public class UsersController {
                                  BindingResult bindingResult, @PathVariable("id") int id) {
         if(bindingResult.hasErrors())
             return "users/edit";
-        //userService.updateUser(id, user);
-        userService.save(user);
+        userService.updateUser(id, user);
+        //userService.save(user);
+
         return "redirect:/users";
     }
 
